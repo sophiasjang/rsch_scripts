@@ -1,0 +1,44 @@
+# Create files and folders for cutoff convergence calculations (quantum espresso)
+for i in 140 150; do mkdir $i; done
+for i in 140 150; do sed -r "s|prefix = 'fluorescein'|prefix = 'fluorescein_$i'|;s|ecutwfc = 80|ecutwfc = $i|" fluorescein.pwscf.in > $i/fluorescein_$i.pwscf.in; done
+
+
+Useful regular expressions
+
+# convert pdb to qchem cartesian
+(ATOM  |HETATM) .* ([- ][.0-9]+) +([- ][.0-9]+) +([- ][.0-9]+) +1\.00  0\.00 *([^ ]*.){2}$
+\4   \1   \2   \3
+
+# remove all extremities in BCL residue
+.* (C[0-9]{1,2}|C[AB][BC]|CM[ABCD]|C[GE]D|C[ABG]A|O[B12]D|OBB|O[12]A) *[ A-Z]BCL.*\n
+
+# match whole line not containing word
+^(.(?!word1|word2))*$
+
+# PDB format
+         1         2         3         4         5         6         7         8
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+MODEL        1
+ATOM      1  N   ALA     1      11.104   6.134  -6.504  1.00  0.00           N
+ATOM      2  CA  ALA     1      11.639   6.071  -5.147  1.00  0.00           C
+...
+...
+ATOM    293 1HG  GLU    18     -14.861  -4.847   0.361  1.00  0.00           H
+ATOM    294 2HG  GLU    18     -13.518  -3.769   0.084  1.00  0.00           H
+HETATM 1407  CA  BLE P   1      14.625  32.240  14.151  1.09 16.76           C
+HETATM 1408  CB  BLE P   1      15.610  33.091  13.297  1.09 16.56           C
+TER     295      GLU    18                                           
+ENDMDL                                                              
+MODEL        2
+ATOM      1  N   ALA     1      11.304   6.234  -6.104  1.00  0.00           N
+ATOM      2  CA  ALA     1      11.239   6.371  -5.247  1.00  0.00           C
+...
+...
+ATOM    293 1HG  GLU    18     -14.752  -4.948   0.461  1.00  0.00           H
+ATOM    294 2HG  GLU    18     -13.630  -3.769   0.160  1.00  0.00           H
+TER     295      GLU    18                                           
+ENDMDL                                                              
+
+CONECT 1179  746 1184 1195 1203                    
+CONECT 1179 1211 1222                              
+CONECT 1021  544 1017 1020 1022

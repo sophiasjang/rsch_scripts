@@ -1,0 +1,23 @@
+Project Overview
+1.Excited states of organic systems
+These studies of fundamental properties of organic interfaces and molecules are directly related to and will benefit from the activities of the SciDAC partnership on excited state methods led by Chelikowsky, while leading to new understanding of organic solar cell physics.
+(A) 
+We will continue our studies on the pentacene/perfluoropentacene donor/acceptor (D/A) array, by comparing predicted and measured optical spectra. We will also study the excited states of a prototypical polymer D/A blend, P3HT/PCBM. Lastly, we will explore the influence of grain boundaries on excited states.
+(B)
+Single-molecule D/A systems provide convenient physical models for photon-induced charge separation. Previously, we predicted the optical spectrum of D/A molecules. This year, we will study the effects of room temperature vibrations and dynamic disorder. The optical absorption for a prototypical molecule, thiophene, will be calculated, accounting for vibrational distortions at room temperature via molecular dynamics.
+(C)
+We will develop a DFT functional, within the family of range-separated hybrids, to accurately and efficiently describe excited states in organic solids.The theory and implementation will be tested on a range of materials.
+
+2.Computational design of photocatalysts
+(A)
+To develop efficient oxide photocatalysts, we must understand the electronic structure of existing catalysts. For a variety of oxides, we will compute the GW bandstructure and quantify the uncertainty in the role of the DFT starting point. The optical properties of a smaller subset will be calculated to gauge the significance of electron-hole interactions. This is a user project with EFRC at Cornell. Additional work on high-throughput screening of transition metal oxides will ramp up as part of the Materials Project at LBL.
+(B)
+Charge transport between a light absorbing semiconductor and catalyst can be controlled by adsorbed organic molecules. Within JCAP at LBL, we will optimize the charge transport at the GaP surface by varying the energy level alignment between the photocathode, organic molecule, and catalyst. We will study a set of benzene- or thiol-based molecule linkers and quantify the impact of interface dipoles, polarization effects, and coverage on interface level alignment.
+(C)
+We will design solar-spectrum-matched GaN nanowires and Ti02 surfaces by exploiting their surface properties. For GaN, the relationship between surface morphology and energetics will be explored using DFT and GW/BSE. With experimental collaborators, we will tune the electronic structure of TiO2 for photocatalysis using organic molecule adsorbates. We will understand the influence of the molecular geometry, the intrinsic dipole moments of molecules, and the adsorption-induced dipole moments on the surface electronic properties via DFT-based studies.
+
+3.Charge transport in molecular-scale junctions 
+Molecular junctions are model molecular circuits that lead to a deeper understanding of the fundamental physics of electron transport. In this user project, we will calculate the conductance of a set of molecular junctions and develop a model for conductance that allows an arbitrary number of molecules near the junction, as exists in experiment. The impact of finite temperature and solvent will be explored to understand how the molecular-scale properties can be manipulated by control of environment.
+
+4.Metal-organic Frameworks for CO2 sequestration 
+Within a UC Berkeley EFRC, we aim to optimize MOFs for CO2 capture and capture. We will develop a systematic methodology for first-principles DFT-based force fields that accurately describe the interaction of guest molecule with the open metal site. We will also explore why the nature of the interaction differs for transition metal MOFs using DFT+U coupled to vdW-DF.

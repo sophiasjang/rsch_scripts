@@ -1,0 +1,103 @@
+&control
+
+   prefix = 'benzene'
+
+   calculation = 'scf'
+
+   restart_mode = 'from_scratch'
+
+   wf_collect = .true.
+
+   tstress = .false.
+
+   tprnfor = .false.
+
+   outdir = './'
+
+   wfcdir = './'
+
+   pseudo_dir = '/global/scratch/altvater/qespresso/pp'
+
+/
+
+&system
+
+   ibrav = 0
+
+   nat = 12
+
+   ntyp = 2
+
+   nbnd = 16
+
+   ecutwfc = 80
+
+/
+
+&electrons
+
+   electron_maxstep = 100
+
+   conv_thr = 1.0d-10
+
+   mixing_mode = 'plain'
+
+   mixing_beta = 0.7
+
+   mixing_ndim = 8
+
+   diagonalization = 'david'
+
+   diago_david_ndim = 4
+
+   diago_full_acc = .true.
+
+/
+
+CELL_PARAMETERS cubic
+
+       35.000 0.000000000 0.000000000
+
+        0.000000000 39.00 0.000000000
+
+        0.000000000 0.000000000 24.00
+
+ATOMIC_SPECIES
+
+C 12.011 C_hard.UPF
+
+H 1.008 H_hard.UPF
+
+ATOMIC_POSITIONS angstrom
+
+C 0.025000  1.3990 0.0000
+C  1.2115  0.6995 0.0000
+
+C  1.2115 -0.6995 0.0000
+
+C  0.0000 -1.3990 0.0000
+
+C -1.2115 -0.6995 0.0000
+
+C -1.2115  0.6995 0.0000
+
+H  0.0000  2.5000 0.0000
+
+H  2.1651  1.2500 0.0000
+
+H  2.1651 -1.2500 0.0000
+
+H  0.0000 -2.5000 0.0000
+
+H -2.1651 -1.2500 0.0000
+
+H -2.1651  1.2500 0.0000
+
+K_POINTS crystal
+
+1
+
+0.0 0.0 0.0 1
+
+
+

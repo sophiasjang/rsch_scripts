@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Based on a batch file by Maverick Woo
+#
+# Usage:
+#       pdfrescale path-stem scale-factor
+#
+# Example:
+#       pdfrescale sillyLNCSpaper 1.2
+# produces
+#       sillyLNCSpaper-1.2.pdf
+
+jobname=${1%.pdf}
+if [ ! -f $jobname.pdf ]; then
+  echo "Input file $jobname.pdf not found"
+  exit 1
+fi
+scale=$2
+if [ "$scale" == "" ]; then
+  echo scale not specified, using default: 0.8
+  scale=0.8
+fi
+tmp=`tempfile|sed -e 's/\./_/g'`.pdf
+
+cp $1.pdf $tmp
+pdflatex \
+   -jobname="$jobname-$scale" \
+   '\documentclass[twoside]{article}\usepackage{pdfpages}\begin{document}\includepdf[pages=-,scale='"$scale"']{'"$tmp"'}\end{document}\batchmode' \
+   > /dev/null
+\rm $tmp
+\rm $jobname-$scale.aux $jobname-$scale.log

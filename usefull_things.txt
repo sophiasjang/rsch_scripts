@@ -4,6 +4,10 @@ for i in 140 150; do sed -r "s|prefix = 'fluorescein'|prefix = 'fluorescein_$i'|
 
 
 Useful regular expressions
+# Make initials of first names
+(^[A-Z]|, [A-Z]|-[A-Z])\w+(?= |-)
+\1.
+
 
 # convert pdb to qchem cartesian
 (ATOM  |HETATM) .* ([- ][.0-9]+) +([- ][.0-9]+) +([- ][.0-9]+) +1\.00  0\.00 *([^ ]*.){2}$

@@ -215,7 +215,7 @@ def usage():
     print 'Usage: plot_generic.py [-txynhl...] filenames'
     print
     print 'Options [default]'
-    print '(s==string, n=int, f=float)'
+    print '(s=string, n=int, f=float)'
     print
     print 'Labels and titles:'
     print '  -t, --title "s"         main title of figure ['']'
@@ -236,6 +236,8 @@ def usage():
     print
     print 'Layout:'
     print '  -l, --linewidth f       width of plot lines [1]'
+    print '      --linestyle s       style to draw lines ["-"]'
+    print '      --fitstyle s        style to draw fit lines ["-"]'
     print '      --subplot nxn       plot each set of data in subplot (e.g. 2x3=2 rows, 3 columns)'
     print '      --fontsize n        general font size [12]'
     print '      --tfont n|s         size of title font [large]'
